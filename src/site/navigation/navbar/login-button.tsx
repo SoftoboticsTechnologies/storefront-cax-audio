@@ -4,6 +4,7 @@ import {ComponentProps, useTransition} from "react";
 import {logoutAction} from '@/features/authentication/logout';
 import {useRouter} from '@/platform/i18n/navigation';
 import {useTranslations} from 'next-intl';
+import {User} from 'lucide-react';
 
 interface LoginButtonProps extends ComponentProps<'button'> {
     isLoggedIn: boolean;
@@ -26,7 +27,13 @@ export function LoginButton({isLoggedIn, ...props}: LoginButtonProps) {
                         router.push('/sign-in')
                     }
                 }}>
-            {isLoggedIn ? t('signOut') : t('signIn')}
+            {isLoggedIn ? t('signOut') : (
+                <>
+                    {/* Icon-only on small phones so the header row fits at 320px. */}
+                    <User className="size-4 sm:hidden" aria-hidden />
+                    <span className="sr-only sm:not-sr-only">{t('signIn')}</span>
+                </>
+            )}
         </button>
     )
 }

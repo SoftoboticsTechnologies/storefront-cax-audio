@@ -5,10 +5,8 @@ import {NavigationLink} from '@/site/navigation/navigation-link';
 import {NavbarCollections} from '@/site/navigation/navbar/navbar-collections';
 import {NavbarCart} from '@/site/navigation/navbar/navbar-cart';
 import {NavbarUser} from '@/site/navigation/navbar/navbar-user';
-import {ThemeSwitcher} from '@/site/navigation/navbar/theme-switcher';
-import {LanguagePicker} from '@/site/navigation/navbar/language-picker';
-import {CurrencyPickerWrapper} from '@/site/navigation/navbar/currency-picker-wrapper';
 import {MobileNavWrapper} from '@/site/navigation/navbar/mobile-nav-wrapper';
+import {MobileSearch} from '@/site/navigation/navbar/mobile-search';
 import {Suspense} from "react";
 import {SearchInput} from '@/site/navigation/search-input';
 import {NavbarUserSkeleton} from '@/site/navigation/skeletons/navbar-user-skeleton';
@@ -32,7 +30,7 @@ export async function Navbar() {
                             <MobileNavWrapper />
                         </Suspense>
                         <NavigationLink href="/" className="shrink-0">
-                            <Image src="/logo/cax%20audiologo.png" alt={SITE_NAME} width={1914} height={619} className="h-10 md:h-12 w-auto" priority />
+                            <Image src="/logo/cax%20audiologo.png" alt={SITE_NAME} width={1914} height={619} className="h-8 min-[360px]:h-9 sm:h-10 md:h-12 w-auto" priority />
                         </NavigationLink>
                     </div>
                     <div className="hidden md:flex flex-1 justify-center">
@@ -41,19 +39,7 @@ export async function Navbar() {
                         </Suspense>
                     </div>
                     <div className="flex items-center sm:gap-1 ml-auto md:ml-0 shrink-0">
-                        <div className="flex items-center">
-                            <Suspense>
-                                <LanguagePicker />
-                            </Suspense>
-                            <Suspense>
-                                <CurrencyPickerWrapper />
-                            </Suspense>
-                        </div>
-                        <div className="hidden sm:flex">
-                            <Suspense>
-                                <ThemeSwitcher />
-                            </Suspense>
-                        </div>
+                        <MobileSearch />
                         <Suspense>
                             <NavbarCart/>
                         </Suspense>

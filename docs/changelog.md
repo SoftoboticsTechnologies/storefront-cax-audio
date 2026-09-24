@@ -3,6 +3,7 @@
 Concise history. Not a full commit log — one line per meaningful change.
 
 ## 2026-09-24
+- Mobile responsiveness pass (audited in headless Chrome at 320/360/375/414/768/1024/1280 px — no horizontal overflow on home, collection, product, search, cart, checkout, auth, contact, account): header gets a search icon below md (`navbar/mobile-search.tsx`, opens the existing `SearchOverlay`); logo scales `h-8`→`h-9` (≥360px)→`h-10` (sm)→`h-12` (md); "Sign in" is a user icon below sm (label kept as `sr-only`). Collection/search product grid is 2-up on phones (`grid-cols-2 lg:grid-cols-3`, tighter gap), skeleton to match. Language/currency/theme pickers removed from the header row (user edit).
 - Header category bar (desktop + mobile): dropdowns are back, now showing the **full** Vendure collection tree under each top-level collection (all levels, indented), led by a "View all <name>" link (`Navigation.viewAllIn`, 4 locales). New `getCollectionTree` in `features/collections/data.ts` + client-safe `features/collections/collection-tree.ts`. Supersedes the earlier same-day "top-level links only" change.
 - Homepage `CategoryDiscovery` tiles: top-level collections only (`getRootCollections`), so model collections (BMW 1 Series, Mercedes-Benz A-Class) no longer appear; names trimmed for display.
 - Header category bar (desktop + mobile): model dropdowns removed; only top-level collections (makes/categories) are shown, as plain links. Names are `.trim()`med for display. Unused `Navigation.viewAll` key dropped (4 locales).
