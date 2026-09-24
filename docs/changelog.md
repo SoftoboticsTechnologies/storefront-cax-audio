@@ -2,6 +2,16 @@
 
 Concise history. Not a full commit log — one line per meaningful change.
 
+## 2026-09-24
+- Header category bar (desktop + mobile): dropdowns are back, now showing the **full** Vendure collection tree under each top-level collection (all levels, indented), led by a "View all <name>" link (`Navigation.viewAllIn`, 4 locales). New `getCollectionTree` in `features/collections/data.ts` + client-safe `features/collections/collection-tree.ts`. Supersedes the earlier same-day "top-level links only" change.
+- Homepage `CategoryDiscovery` tiles: top-level collections only (`getRootCollections`), so model collections (BMW 1 Series, Mercedes-Benz A-Class) no longer appear; names trimmed for display.
+- Header category bar (desktop + mobile): model dropdowns removed; only top-level collections (makes/categories) are shown, as plain links. Names are `.trim()`med for display. Unused `Navigation.viewAll` key dropped (4 locales).
+- Removed unreferenced assets: `public/hero/{Audi,Mercedes,Porsche,bmw,hero 1st}.png` (~9.5 MB of source PNGs; the `.webp` versions are what's used), 3 unused `public/logo/DRIPFUNNEL *.png` variants, `public/logo/cax audiologo 2.png`, `public/next.svg`, `public/vendure.svg`.
+- Homepage editorial banner: fixed a bright seam on hover — the 105% zoom spilled the photo past the navy fade into the text column; the photo wrapper is now `overflow-hidden`.
+- Homepage brand grid: removed the "N products" / "Coming soon" line under each make; tiles are logo + name only. `Home.brands.productCount`/`comingSoon` keys dropped in all 4 locales.
+- Homepage editorial banner: Mercedes-Benz collection now shows a site-curated E-Class (W213) interior photo (`public/banners/mercedes-interior.webp`, Wikimedia Commons CC BY 2.0, credits in `public/banners/CREDITS.txt`) instead of its Vendure featured asset. Slug-keyword map `BANNER_IMAGES` in `site/home/editorial-banner.tsx`; unmatched collections still use their featured asset.
+- Dev/preview port changed from 3001 to 1001 (`package.json` scripts, `.env.example`, README).
+
 ## 2026-09-23
 - Collection hero + homepage editorial banner, mobile (<md): the photo is now the full-card background behind the text with a `bg-navy/75` overlay, instead of a strip stacked under the text. md+ keeps the split layout.
 - Collection pages: the plain `h1` header is replaced by a navy split banner in the homepage editorial style (`features/collections/routes/collection-hero.tsx`): eyebrow, collection name (h1), Vendure description as plain text (fallback `Collection.heroFallbackDescription`), "Browse products" button scrolling to `#products`, featured asset on the right. Applies to every collection (all car makes/models and categories). Fallback photo map moved from `site/home/category-images.ts` to `features/collections/fallback-images.ts` so the feature can use it; the loading skeleton gained a matching banner placeholder.

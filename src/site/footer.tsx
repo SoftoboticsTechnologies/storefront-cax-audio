@@ -21,7 +21,14 @@ const SOCIAL_LINKS = [
     {network: 'LinkedIn', href: BUSINESS.social.linkedin, Icon: LinkedInIcon},
 ];
 
-const socialButtonClassName = 'flex size-11 items-center justify-center rounded-md border border-white/15 text-navy-foreground';
+const socialButtonClassName = 'flex size-11 items-center justify-center rounded-md border transition-all duration-200 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]';
+
+const socialBrandClassName: Record<string, string> = {
+    Facebook: 'border-[#1877F2]/35 bg-[#1877F2]/8 text-[#1877F2] hover:border-[#1877F2] hover:bg-[#1877F2]/12 hover:text-[#1877F2]',
+    Instagram: 'border-[#E4405F]/35 bg-[#E4405F]/8 text-[#E4405F] hover:border-[#E4405F] hover:bg-[#E4405F]/12 hover:text-[#E4405F]',
+    YouTube: 'border-[#FF0000]/35 bg-[#FF0000]/8 text-[#FF0000] hover:border-[#FF0000] hover:bg-[#FF0000]/12 hover:text-[#FF0000]',
+    LinkedIn: 'border-[#0A66C2]/35 bg-[#0A66C2]/8 text-[#0A66C2] hover:border-[#0A66C2] hover:bg-[#0A66C2]/12 hover:text-[#0A66C2]',
+};
 
 const linkClassName = 'hover:text-primary transition-colors';
 const contactIconClassName = 'size-5 shrink-0 text-primary';
@@ -74,12 +81,16 @@ export async function Footer() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={t('followUs', {network})}
-                                            className={`${socialButtonClassName} transition-colors hover:border-primary hover:text-primary`}
+                                            className={`${socialButtonClassName} ${socialBrandClassName[network]}`}
                                         >
                                             <Icon className="size-5"/>
                                         </a>
                                     ) : (
-                                        <span role="img" aria-label={network} className={socialButtonClassName}>
+                                        <span
+                                            role="img"
+                                            aria-label={network}
+                                            className={`${socialButtonClassName} ${socialBrandClassName[network]}`}
+                                        >
                                             <Icon className="size-5"/>
                                         </span>
                                     )}

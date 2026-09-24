@@ -106,9 +106,7 @@
       "title": "ప్రసిద్ధ",
       "highlight": "వాహన బ్రాండ్లు",
       "description": "మీ వాహన బ్రాండ్‌ను ఎంచుకుని దానికి తగిన ఉత్పత్తులను చూడండి.",
-      "viewAll": "అన్నీ చూడండి",
-      "productCount": "{count, plural, one {# ఉత్పత్తి} other {# ఉత్పత్తులు}}",
-      "comingSoon": "త్వరలో వస్తోంది"
+      "viewAll": "అన్నీ చూడండి"
     },
     "why": {
       "eyebrow": "{siteName} ఎందుకు",

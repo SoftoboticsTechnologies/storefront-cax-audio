@@ -4,7 +4,6 @@
     "menu": "Menü",
     "searchProducts": "Produkte suchen...",
     "shopAll": "Alle Produkte",
-    "viewAll": "Alle anzeigen",
     "collections": "Kategorien",
     "searchSuggestions": "Vorschläge",
     "searchNoResults": "Keine Produkte für \"{term}\" gefunden",
@@ -17,6 +16,7 @@
     "greeting": "Hallo, {name}",
     "shoppingCart": "Warenkorb",
     "switchLanguage": "Sprache wechseln",
-    "switchCurrency": "Währung wechseln"
+    "switchCurrency": "Währung wechseln",
+    "viewAllIn": "Alle {name} ansehen"
   }
 }

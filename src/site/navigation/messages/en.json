@@ -3,8 +3,7 @@
     "openMenu": "Open menu",
     "menu": "Menu",
     "searchProducts": "Search products...",
-    "shopAll": "Shop All",
-    "viewAll": "View all",
+    "shopAll": "Shop",
     "collections": "Collections",
     "searchSuggestions": "Suggestions",
     "searchNoResults": "No products found for \"{term}\"",
@@ -17,6 +16,7 @@
     "greeting": "Hi, {name}",
     "shoppingCart": "Shopping Cart",
     "switchLanguage": "Switch language",
-    "switchCurrency": "Switch currency"
+    "switchCurrency": "Switch currency",
+    "viewAllIn": "View all {name}"
   }
 }

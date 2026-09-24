@@ -63,9 +63,6 @@ export async function BrandGrid({facet}: {facet: CatalogFacet}) {
                                 <span className="font-display text-2xl transition-colors group-hover:text-primary">
                                     {value.name}
                                 </span>
-                                <span className="text-xs font-medium text-muted-foreground">
-                                    {value.count > 0 ? t('productCount', {count: value.count}) : t('comingSoon')}
-                                </span>
                             </Link>
                         </li>
                     ))}

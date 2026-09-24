@@ -1,0 +1,8 @@
+Homepage editorial banner images (src/site/home/editorial-banner.tsx).
+Source: Wikimedia Commons. Resized to 1600px wide and converted to WebP.
+
+mercedes-interior.webp
+  Mercedes-Benz W213 (E-class) interior.jpg
+  by Kārlis Dambrāns, CC BY 2.0 https://creativecommons.org/licenses/by/2.0
+  https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W213_(E-class)_interior.jpg
+  (originally https://www.flickr.com/photos/janitors/26385171435/)

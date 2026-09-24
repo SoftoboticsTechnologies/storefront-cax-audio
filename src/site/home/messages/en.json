@@ -106,9 +106,7 @@
       "title": "Popular",
       "highlight": "vehicle brands",
       "description": "Pick your make to see products built for it.",
-      "viewAll": "View all",
-      "productCount": "{count, plural, one {# product} other {# products}}",
-      "comingSoon": "Coming soon"
+      "viewAll": "View all"
     },
     "why": {
       "eyebrow": "Why {siteName}",

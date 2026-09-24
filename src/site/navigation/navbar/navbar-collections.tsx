@@ -1,6 +1,7 @@
-import Image from 'next/image';
+import {getTranslations} from 'next-intl/server';
 import {getRouteLocale} from '@/platform/i18n/server';
-import {getRootCollections} from '@/features/collections/data';
+import {getCollectionTree} from '@/features/collections/data';
+import {flattenCollectionTree} from '@/features/collections/collection-tree';
 import {NavigationLink} from '@/site/navigation/navigation-link';
 import {
     NavigationMenu,
@@ -11,20 +12,26 @@ import {
     NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
 import {NavbarLink} from '@/site/navigation/navbar/navbar-link';
+import {cn} from '@/lib/utils';
 
 const navItemClassName = 'h-10 px-3 text-[13px] font-semibold uppercase tracking-wide hover:text-primary';
 
+/**
+ * Top-level collections; one with children opens a dropdown listing its whole
+ * subtree (mirrors the Vendure collection tree), deeper levels indented. The
+ * trigger itself isn't a link, so the first entry links to the parent.
+ */
 export async function NavbarCollections() {
     const locale = await getRouteLocale();
+    const t = await getTranslations({locale, namespace: 'Navigation'});
 
-    const collections = await getRootCollections(locale);
+    const tree = await getCollectionTree(locale);
 
     return (
         <NavigationMenu>
             <NavigationMenuList>
-                {collections.map((collection) => {
-                    const children = collection.children ?? [];
-                    if (children.length === 0) {
+                {tree.map((collection) => {
+                    if (collection.children.length === 0) {
                         return (
                             <NavigationMenuItem key={collection.slug}>
                                 <NavbarLink href={`/collection/${collection.slug}`} prefetch={false} className={navItemClassName}>
@@ -40,24 +47,23 @@ export async function NavbarCollections() {
                                 {collection.name}
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <ul className="grid w-56 gap-1">
-                                    {children.map((child) => (
-                                        <li key={child.slug}>
+                                <ul className="grid w-72 gap-0.5">
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="font-semibold"
+                                            render={<NavigationLink href={`/collection/${collection.slug}`} prefetch={false} />}
+                                        >
+                                            {t('viewAllIn', {name: collection.name})}
+                                        </NavigationMenuLink>
+                                    </li>
+                                    {flattenCollectionTree(collection.children).map(({node, depth}) => (
+                                        <li key={node.slug}>
                                             <NavigationMenuLink
-                                                render={
-                                                    <NavigationLink href={`/collection/${child.slug}`} prefetch={false} />
-                                                }
+                                                className={cn(depth > 1 && 'text-muted-foreground')}
+                                                style={{paddingLeft: `${0.5 + depth * 0.75}rem`}}
+                                                render={<NavigationLink href={`/collection/${node.slug}`} prefetch={false} />}
                                             >
-                                                {child.featuredAsset?.preview && (
-                                                    <Image
-                                                        src={`${child.featuredAsset.preview}?preset=thumb`}
-                                                        alt=""
-                                                        width={32}
-                                                        height={32}
-                                                        className="rounded-sm object-cover"
-                                                    />
-                                                )}
-                                                {child.name}
+                                                {node.name}
                                             </NavigationMenuLink>
                                         </li>
                                     ))}

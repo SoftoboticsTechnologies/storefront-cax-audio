@@ -106,9 +106,7 @@
       "title": "Beliebte",
       "highlight": "Fahrzeugmarken",
       "description": "Wähle deine Marke, um passende Produkte zu sehen.",
-      "viewAll": "Alle ansehen",
-      "productCount": "{count, plural, one {# Produkt} other {# Produkte}}",
-      "comingSoon": "Demnächst verfügbar"
+      "viewAll": "Alle ansehen"
     },
     "why": {
       "eyebrow": "Warum {siteName}",

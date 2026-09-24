@@ -3,7 +3,7 @@ import {ArrowRight} from "lucide-react";
 import { Link } from '@/platform/i18n/navigation';
 import {getTranslations} from 'next-intl/server';
 import {getRouteLocale} from '@/platform/i18n/server';
-import {getTopCollections} from '@/features/collections/data';
+import {getRootCollections} from '@/features/collections/data';
 import {SectionHeading, sectionActionClassName} from '@/components/ui/section-heading';
 import {getCategoryFallbackImage} from '@/features/collections/fallback-images';
 
@@ -12,7 +12,8 @@ const MAX_TILES = 12;
 export async function CategoryDiscovery() {
     const locale = await getRouteLocale();
     const t = await getTranslations({locale, namespace: 'Home.categories'});
-    const collections = (await getTopCollections(locale)).slice(0, MAX_TILES);
+    // Top-level collections only (makes, categories) — models like "BMW 1 Series" are left out.
+    const collections = (await getRootCollections(locale)).slice(0, MAX_TILES);
 
     if (collections.length === 0) {
         return null;
@@ -65,7 +66,7 @@ export async function CategoryDiscovery() {
                                         )}
                                     </div>
                                     <span className="flex flex-1 items-center justify-center border-t px-2 py-3 text-center text-xs font-bold uppercase tracking-wide line-clamp-2 transition-colors group-hover:text-primary">
-                                        {collection.name}
+                                        {collection.name.trim()}
                                     </span>
                                 </Link>
                             </li>

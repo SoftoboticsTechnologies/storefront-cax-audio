@@ -3,8 +3,7 @@
     "openMenu": "मेनू खोलें",
     "menu": "मेनू",
     "searchProducts": "उत्पाद खोजें...",
-    "shopAll": "सभी खरीदें",
-    "viewAll": "सभी देखें",
+    "shopAll": "Shop",
     "collections": "संग्रह",
     "searchSuggestions": "सुझाव",
     "searchNoResults": "\"{term}\" के लिए कोई उत्पाद नहीं मिला",
@@ -17,6 +16,7 @@
     "greeting": "नमस्ते, {name}",
     "shoppingCart": "शॉपिंग कार्ट",
     "switchLanguage": "भाषा बदलें",
-    "switchCurrency": "मुद्रा बदलें"
+    "switchCurrency": "मुद्रा बदलें",
+    "viewAllIn": "सभी {name} देखें"
   }
 }

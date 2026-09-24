@@ -5,6 +5,16 @@ import {getTranslations} from 'next-intl/server';
 import {getRouteLocale} from '@/platform/i18n/server';
 import {getTopCollections} from '@/features/collections/data';
 
+/**
+ * Site-curated banner photos (public/banners/*), matched on collection slug
+ * keywords (no IDs hardcoded). A match wins over the collection's Vendure
+ * featured asset; other collections keep using theirs. Attribution in
+ * /public/banners/CREDITS.txt.
+ */
+const BANNER_IMAGES: {match: RegExp; image: string}[] = [
+    {match: /mercedes/, image: '/banners/mercedes-interior.webp'},
+];
+
 interface EditorialBannerProps {
     collectionSlug: string;
 }
@@ -18,6 +28,9 @@ export async function EditorialBanner({collectionSlug}: EditorialBannerProps) {
     if (!collection) {
         return null;
     }
+
+    const image = BANNER_IMAGES.find(({match}) => match.test(collection.slug.toLowerCase()))?.image
+        ?? collection.featuredAsset?.preview;
 
     return (
         <section className="pt-12 md:pt-16 pb-0">
@@ -43,10 +56,11 @@ export async function EditorialBanner({collectionSlug}: EditorialBannerProps) {
                         </span>
                     </div>
                     {/* Below md the photo fills the whole card behind the text; md+ it is the right half. */}
-                    <div className="absolute inset-0 md:relative md:inset-auto">
-                        {collection.featuredAsset?.preview && (
+                    {/* overflow-hidden: the hover zoom must not spill past the fade into the text column. */}
+                    <div className="absolute inset-0 overflow-hidden md:relative md:inset-auto">
+                        {image && (
                             <Image
-                                src={collection.featuredAsset.preview}
+                                src={image}
                                 alt=""
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"

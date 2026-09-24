@@ -106,9 +106,7 @@
       "title": "लोकप्रिय",
       "highlight": "वाहन ब्रांड",
       "description": "अपने वाहन का ब्रांड चुनें और उसके लिए बने उत्पाद देखें।",
-      "viewAll": "सभी देखें",
-      "productCount": "{count, plural, one {# उत्पाद} other {# उत्पाद}}",
-      "comingSoon": "जल्द आ रहा है"
+      "viewAll": "सभी देखें"
     },
     "why": {
       "eyebrow": "{siteName} क्यों",

@@ -20,16 +20,10 @@ import {
     AccordionContent,
 } from '@/components/ui/accordion';
 import {useTranslations} from 'next-intl';
-
-interface Collection {
-    id: string;
-    name: string;
-    slug: string;
-    children?: Collection[] | null;
-}
+import {flattenCollectionTree, type CollectionNode} from '@/features/collections/collection-tree';
 
 interface MobileNavProps {
-    collections: Collection[];
+    collections: CollectionNode[];
 }
 
 export function MobileNav({collections}: MobileNavProps) {
@@ -94,8 +88,7 @@ export function MobileNav({collections}: MobileNavProps) {
                             </p>
                             <nav className="flex flex-col gap-0.5">
                                 {collections.map((collection) => {
-                                    const children = collection.children ?? [];
-                                    if (children.length === 0) {
+                                    if (collection.children.length === 0) {
                                         return (
                                             <SheetClose
                                                 key={collection.slug}
@@ -114,6 +107,7 @@ export function MobileNav({collections}: MobileNavProps) {
                                         );
                                     }
 
+                                    // Whole subtree, deeper levels indented (mirrors the desktop dropdown).
                                     return (
                                         <Accordion key={collection.slug}>
                                             <AccordionItem value={collection.slug}>
@@ -127,28 +121,29 @@ export function MobileNav({collections}: MobileNavProps) {
                                                                 <Link
                                                                     href={`/collection/${collection.slug}`}
                                                                     prefetch={false}
-                                                                    className="px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors"
+                                                                    className="px-3 py-2 text-sm font-semibold rounded-md hover:bg-accent transition-colors"
                                                                 />
                                                             }
                                                             nativeButton={false}
                                                             onClick={handleLinkClick}
                                                         >
-                                                            {t('viewAll')}
+                                                            {t('viewAllIn', {name: collection.name})}
                                                         </SheetClose>
-                                                        {children.map((child) => (
+                                                        {flattenCollectionTree(collection.children).map(({node, depth}) => (
                                                             <SheetClose
-                                                                key={child.slug}
+                                                                key={node.slug}
                                                                 render={
                                                                     <Link
-                                                                        href={`/collection/${child.slug}`}
+                                                                        href={`/collection/${node.slug}`}
                                                                         prefetch={false}
-                                                                        className="px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors"
+                                                                        className="py-2 pr-3 text-sm rounded-md hover:bg-accent transition-colors"
+                                                                        style={{paddingLeft: `${depth * 0.75}rem`}}
                                                                     />
                                                                 }
                                                                 nativeButton={false}
                                                                 onClick={handleLinkClick}
                                                             >
-                                                                {child.name}
+                                                                {node.name}
                                                             </SheetClose>
                                                         ))}
                                                     </div>
