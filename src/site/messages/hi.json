@@ -9,20 +9,51 @@
   "AnnouncementBar": {
     "message1": "सुरक्षित चेकआउट",
     "message2": "क्यूरेटेड संग्रह",
-    "message3": "विश्वव्यापी शिपिंग"
+    "callUs": "कॉल करें:"
   },
   "Footer": {
-    "description": "Vendure और Next.js के साथ बनाया गया एक आधुनिक, हेडलेस ई-कॉमर्स स्टोरफ्रंट। तेज़, लचीला, और उत्पादन के लिए तैयार।",
+    "description": "प्रीमियम कार ऑडियो और मल्टीमीडिया समाधानों के लिए आपका भरोसेमंद ठिकाना।",
     "categories": "श्रेणियां",
     "customer": "ग्राहक",
     "shopAll": "सभी खरीदें",
-    "orders": "ऑर्डर",
+    "orders": "मेरे ऑर्डर",
     "account": "खाता",
-    "vendure": "Vendure",
-    "github": "GitHub",
-    "documentation": "दस्तावेज़ीकरण",
-    "sourceCode": "सोर्स कोड",
-    "copyright": "DripFunnel। सर्वाधिकार सुरक्षित।",
-    "poweredBy": "द्वारा संचालित"
+    "copyright": "{siteName}। सर्वाधिकार सुरक्षित।",
+    "poweredBy": "द्वारा संचालित",
+    "contact": "संपर्क",
+    "whatsapp": "WhatsApp पर चैट करें",
+    "contactUs": "संपर्क करें",
+    "googleProfile": "Google बिज़नेस प्रोफ़ाइल",
+    "followUs": "{network} पर हमें फ़ॉलो करें"
+  },
+  "Contact": {
+    "pageTitle": "संपर्क करें",
+    "metaDescription": "{city} में {siteName} से संपर्क करें — कार ऑडियो, हेड यूनिट और इंस्टॉलेशन के लिए कॉल, WhatsApp या ईमेल करें।",
+    "eyebrow": "संपर्क करें",
+    "title": "हम आपकी",
+    "highlight": "मदद के लिए हैं।",
+    "description": "फिटमेंट, कीमत या इंस्टॉलेशन के बारे में सवाल हैं? हमसे WhatsApp, फ़ोन या ईमेल पर संपर्क करें — या नीचे पूछताछ भेजें।",
+    "visit": "हमारे स्टोर पर आएँ",
+    "openInMaps": "Google Maps में खोलें",
+    "call": "कॉल करें",
+    "whatsapp": "WhatsApp",
+    "email": "ईमेल",
+    "chatOnWhatsApp": "WhatsApp पर हमसे चैट करें",
+    "whatsappGreeting": "नमस्ते Cax Audio, मेरा एक सवाल है।",
+    "form": {
+      "title": "पूछताछ भेजें",
+      "subtitle": "अपने वाहन और ज़रूरत के बारे में बताएँ — हम आपसे संपर्क करेंगे।",
+      "intro": "नमस्ते Cax Audio, आपकी वेबसाइट से मेरी एक पूछताछ है।",
+      "name": "नाम",
+      "phone": "फ़ोन",
+      "vehicle": "वाहन",
+      "vehiclePlaceholder": "जैसे BMW 3 Series 2015",
+      "message": "संदेश",
+      "messagePlaceholder": "आप कौन सा उत्पाद या सेवा ढूँढ रहे हैं?",
+      "sendWhatsApp": "WhatsApp पर भेजें",
+      "sendEmail": "ईमेल से भेजें",
+      "emailSubject": "{name} की वेबसाइट पूछताछ",
+      "note": "आपका संदेश WhatsApp या आपके ईमेल ऐप में भेजने के लिए तैयार खुलेगा। वहाँ पुष्टि करने तक कुछ नहीं भेजा जाता।"
+    }
   }
 }

@@ -21,7 +21,7 @@ export function NavbarUser() {
 
     if (!customer) {
         return (
-            <Button render={<LoginButton isLoggedIn={false} />} variant="ghost" />
+            <Button render={<LoginButton isLoggedIn={false} />} className="ml-1 px-3 sm:px-5 font-semibold" />
         );
     }
 

@@ -2,6 +2,9 @@
   "Collection": {
     "home": "होम",
     "collectionNotFound": "संग्रह नहीं मिला",
-    "browseCollectionAt": "{siteName} पर हमारा {name} संग्रह देखें"
+    "browseCollectionAt": "{siteName} पर हमारा {name} संग्रह देखें",
+    "heroEyebrow": "कलेक्शन",
+    "heroFallbackDescription": "हमारी {name} रेंज देखें: एंड्रॉइड हेड यूनिट, GPS नेविगेशन और इन-कार मल्टीमीडिया अपग्रेड।",
+    "heroCta": "प्रोडक्ट्स देखें"
   }
 }

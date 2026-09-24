@@ -9,20 +9,51 @@
   "AnnouncementBar": {
     "message1": "Sicherer Checkout",
     "message2": "Kuratierte Kollektionen",
-    "message3": "Weltweiter Versand"
+    "callUs": "Rufen Sie an:"
   },
   "Footer": {
-    "description": "Ein moderner, Headless-E-Commerce-Shop, erstellt mit Vendure und Next.js. Schnell, flexibel und produktionsbereit.",
+    "description": "Deine Adresse für hochwertiges Car-Audio und Multimedia-Lösungen.",
     "categories": "Kategorien",
     "customer": "Kunde",
     "shopAll": "Alle Produkte",
-    "orders": "Bestellungen",
+    "orders": "Meine Bestellungen",
     "account": "Konto",
-    "vendure": "Vendure",
-    "github": "GitHub",
-    "documentation": "Dokumentation",
-    "sourceCode": "Quellcode",
-    "copyright": "DripFunnel. Alle Rechte vorbehalten.",
-    "poweredBy": "Powered by"
+    "copyright": "{siteName}. Alle Rechte vorbehalten.",
+    "poweredBy": "Powered by",
+    "contact": "Kontakt",
+    "whatsapp": "Auf WhatsApp chatten",
+    "contactUs": "Kontakt",
+    "googleProfile": "Google-Unternehmensprofil",
+    "followUs": "Folge uns auf {network}"
+  },
+  "Contact": {
+    "pageTitle": "Kontakt",
+    "metaDescription": "Kontaktiere {siteName} in {city} — per Telefon, WhatsApp oder E-Mail zu Car-Audio, Autoradios und Einbau.",
+    "eyebrow": "Kontakt",
+    "title": "Wir sind für dich",
+    "highlight": "da.",
+    "description": "Fragen zu Passform, Preisen oder Einbau? Erreiche uns per WhatsApp, Telefon oder E-Mail — oder sende unten eine Anfrage.",
+    "visit": "Besuche unser Geschäft",
+    "openInMaps": "In Google Maps öffnen",
+    "call": "Anrufen",
+    "whatsapp": "WhatsApp",
+    "email": "E-Mail",
+    "chatOnWhatsApp": "Mit uns auf WhatsApp chatten",
+    "whatsappGreeting": "Hallo Cax Audio, ich habe eine Frage.",
+    "form": {
+      "title": "Anfrage senden",
+      "subtitle": "Erzähl uns von deinem Fahrzeug und was du brauchst — wir melden uns.",
+      "intro": "Hallo Cax Audio, ich habe eine Anfrage über eure Website.",
+      "name": "Name",
+      "phone": "Telefon",
+      "vehicle": "Fahrzeug",
+      "vehiclePlaceholder": "z. B. BMW 3er 2015",
+      "message": "Nachricht",
+      "messagePlaceholder": "Welches Produkt oder welche Leistung suchst du?",
+      "sendWhatsApp": "Per WhatsApp senden",
+      "sendEmail": "Per E-Mail senden",
+      "emailSubject": "Website-Anfrage von {name}",
+      "note": "Deine Nachricht öffnet sich versandbereit in WhatsApp oder deiner E-Mail-App. Gesendet wird erst, wenn du dort bestätigst."
+    }
   }
 }

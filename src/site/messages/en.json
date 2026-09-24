@@ -9,20 +9,51 @@
   "AnnouncementBar": {
     "message1": "Secure checkout",
     "message2": "Curated collections",
-    "message3": "Worldwide shipping"
+    "callUs": "Call us:"
   },
   "Footer": {
-    "description": "A modern, headless e-commerce storefront built with Vendure and Next.js. Fast, flexible, and ready for production.",
+    "description": "Your destination for premium car audio and multimedia solutions.",
     "categories": "Categories",
     "customer": "Customer",
     "shopAll": "Shop All",
-    "orders": "Orders",
+    "orders": "My Orders",
     "account": "Account",
-    "vendure": "Vendure",
-    "github": "GitHub",
-    "documentation": "Documentation",
-    "sourceCode": "Source Code",
-    "copyright": "DripFunnel. All rights reserved.",
-    "poweredBy": "Powered by"
+    "copyright": "{siteName}. All rights reserved.",
+    "poweredBy": "Powered by",
+    "contact": "Contact",
+    "whatsapp": "Chat on WhatsApp",
+    "contactUs": "Contact Us",
+    "googleProfile": "Google Business Profile",
+    "followUs": "Follow us on {network}"
+  },
+  "Contact": {
+    "pageTitle": "Contact Us",
+    "metaDescription": "Get in touch with {siteName} in {city} — call, WhatsApp or email us about car audio, head units and installation.",
+    "eyebrow": "Contact us",
+    "title": "We're here to",
+    "highlight": "help.",
+    "description": "Questions about fitment, pricing or installation? Reach us on WhatsApp, phone or email — or send an enquiry below.",
+    "visit": "Visit our store",
+    "openInMaps": "Open in Google Maps",
+    "call": "Call us",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "chatOnWhatsApp": "Chat with us on WhatsApp",
+    "whatsappGreeting": "Hi Cax Audio, I have a question.",
+    "form": {
+      "title": "Send an enquiry",
+      "subtitle": "Tell us about your vehicle and what you need — we will get back to you.",
+      "intro": "Hi Cax Audio, I have an enquiry from your website.",
+      "name": "Name",
+      "phone": "Phone",
+      "vehicle": "Vehicle",
+      "vehiclePlaceholder": "e.g. BMW 3 Series 2015",
+      "message": "Message",
+      "messagePlaceholder": "What product or service are you looking for?",
+      "sendWhatsApp": "Send on WhatsApp",
+      "sendEmail": "Send by email",
+      "emailSubject": "Website enquiry from {name}",
+      "note": "Your message opens in WhatsApp or your email app, ready to send. Nothing is sent until you confirm there."
+    }
   }
 }

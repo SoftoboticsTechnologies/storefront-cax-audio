@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 1001",
     "build": "next build && node scripts/write-root-redirect.mjs",
-    "start": "next dev --port 3001",
-    "preview": "npx serve@latest out -l 3001",
+    "start": "next dev --port 1001",
+    "preview": "npx serve@latest out -l 1001",
     "serve": "npm run build && npm run preview",
     "lint": "eslint",
     "check-types": "next typegen && tsc --noEmit",

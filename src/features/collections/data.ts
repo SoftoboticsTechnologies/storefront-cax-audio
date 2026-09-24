@@ -34,3 +34,17 @@ export async function getTopCollections(locale: string): Promise<TopCollection[]
 
     return items;
 }
+
+/**
+ * Top-level collections only, derived from getTopCollections (which returns
+ * every collection, children included): a collection is a root when it isn't
+ * listed as another collection's child. Used for navigation, where the flat
+ * list would repeat children that already appear in their parent's dropdown.
+ */
+export async function getRootCollections(locale: string): Promise<TopCollection[]> {
+    const collections = await getTopCollections(locale);
+    const childIds = new Set(collections.flatMap((c) => (c.children ?? []).map((child) => child.id)));
+    const roots = collections.filter((c) => !childIds.has(c.id));
+    // Guard against a cyclic/odd tree leaving nothing to show.
+    return roots.length > 0 ? roots : collections;
+}

@@ -14,10 +14,12 @@ export function SearchInput() {
             <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="relative flex w-64 items-center rounded-md border border-input bg-transparent px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent"
+                className="group relative flex h-11 w-full max-w-xl items-center rounded-full border border-border bg-muted pl-5 pr-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:bg-background"
             >
-                <Search className="mr-2 h-4 w-4 shrink-0" />
-                <span className="truncate">{t('searchProducts')}</span>
+                <span className="flex-1 truncate text-left">{t('searchProducts')}</span>
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:scale-105">
+                    <Search className="size-4" />
+                </span>
             </button>
             <SearchOverlay open={open} onOpenChange={setOpen} />
         </>

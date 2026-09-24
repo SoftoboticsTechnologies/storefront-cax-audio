@@ -2,6 +2,9 @@
   "Collection": {
     "home": "Home",
     "collectionNotFound": "Collection Not Found",
-    "browseCollectionAt": "Browse our {name} collection at {siteName}"
+    "browseCollectionAt": "Browse our {name} collection at {siteName}",
+    "heroEyebrow": "Collection",
+    "heroFallbackDescription": "Browse our {name} range: Android head units, GPS navigation and in-car multimedia upgrades.",
+    "heroCta": "Browse products"
   }
 }

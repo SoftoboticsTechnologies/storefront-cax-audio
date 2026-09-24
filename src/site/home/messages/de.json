@@ -1,17 +1,61 @@
 {
   "Hero": {
-    "eyebrow": "Neue Kollektion",
-    "titlePrefix": "Entdecke",
-    "titleFallback": "Entdecke hochwertige Produkte",
-    "subtitle": "Sorgfältig kuratierte Produkte, präsentiert mit der Sorgfalt, die sie verdienen.",
-    "shopNow": "Jetzt einkaufen",
-    "viewAllProducts": "Alle Produkte anzeigen"
+    "eyebrow": "Car-Audio & Multimedia",
+    "titleStart": "Das richtige",
+    "titleHighlight": "Upgrade",
+    "titleEnd": "für dein Auto.",
+    "subtitle": "Android-Autoradios, GPS-Navigation und Multimedia fürs Auto — finde genau das Passende für dein Fahrzeug.",
+    "finder": {
+      "vehicleTitle": "Nach Fahrzeug suchen",
+      "anyBrand": "Alle Fahrzeugmarken",
+      "categoryLabel": "Kategorie",
+      "allCategories": "Alle Kategorien",
+      "findProducts": "Produkte finden",
+      "or": "oder",
+      "keywordTitle": "Nach Stichwort suchen",
+      "keywordPlaceholder": "z. B. Android-Autoradio",
+      "search": "Suchen"
+    },
+    "slides": {
+      "brand": {
+        "eyebrow": "Cax Audio · Drive the sound",
+        "title": "Smarter Sound. Größere Reisen.",
+        "description": "Android-Autoradios, GPS-Navigation und Multimedia-Systeme fürs Auto.",
+        "cta": "Jetzt einkaufen"
+      },
+      "bmw": {
+        "eyebrow": "Für BMW",
+        "title": "Rüste deinen BMW auf",
+        "description": "Android-Autoradios, GPS-Navigation und Multimedia – passend für deinen BMW.",
+        "cta": "BMW entdecken"
+      },
+      "mercedes": {
+        "eyebrow": "Für Mercedes-Benz",
+        "title": "Rüste deinen Mercedes-Benz auf",
+        "description": "Android-Displays und Multimedia-Upgrades für das Cockpit deines Mercedes-Benz.",
+        "cta": "Mercedes-Benz entdecken"
+      },
+      "audi": {
+        "eyebrow": "Für Audi",
+        "title": "Rüste deinen Audi auf",
+        "description": "Android-Autoradios, GPS-Navigation und Multimedia-Upgrades – passend für deinen Audi.",
+        "cta": "Audi entdecken"
+      },
+      "porsche": {
+        "eyebrow": "Für Porsche",
+        "title": "Rüste deinen Porsche auf",
+        "description": "Android-Autoradios, GPS-Navigation und Multimedia-Upgrades – passend für deinen Porsche.",
+        "cta": "Porsche entdecken"
+      }
+    },
+    "previousSlide": "Vorheriges Bild",
+    "nextSlide": "Nächstes Bild",
+    "goToSlide": "Zu Bild {number}"
   },
   "Home": {
     "pageTitle": "Ihr One-Stop-Shop",
     "description": "Entdecken Sie hochwertige Produkte zu wettbewerbsfähigen Preisen. Jetzt einkaufen und die besten Angebote für Elektronik, Mode, Haushaltswaren und mehr finden.",
     "ogDescription": "Entdecken Sie hochwertige Produkte zu wettbewerbsfähigen Preisen. Jetzt die besten Angebote sichern.",
-    "whyShopWithUs": "Warum bei uns einkaufen",
     "features": {
       "highQuality": {
         "title": "Hohe Qualität",
@@ -24,23 +68,53 @@
       "fastDelivery": {
         "title": "Schnelle Lieferung",
         "description": "Schneller und zuverlässiger Versand weltweit"
+      },
+      "securePayments": {
+        "title": "Sichere Zahlung",
+        "description": "Verschlüsselter Checkout mit vertrauenswürdigen Zahlungsanbietern"
       }
-    },
-    "categoryDiscovery": {
-      "title": "Nach Kategorie einkaufen"
     },
     "editorialBanner": {
       "eyebrow": "Redaktionstipp",
       "cta": "Kollektion entdecken",
       "fallbackDescription": "Eine kuratierte Auswahl unserer Favoriten, ausgewählt für ihre Qualität und ihr Design."
     },
-    "shopByCategory": {
-      "title": "Unsere Kollektionen entdecken"
-    },
     "ctaBanner": {
       "title": "Werde Teil der Community",
       "subtitle": "Erstellen Sie ein Konto für einen schnelleren Checkout, Bestellverfolgung und frühzeitigen Zugang zu Neuheiten.",
       "cta": "Konto erstellen"
+    },
+    "trust": {
+      "genuine": "Originalprodukte",
+      "dispatch": "Schneller Versand",
+      "secure": "Sichere Zahlung",
+      "support": "Fachkundiger Support",
+      "genuineDescription": "100 % authentische Originalprodukte von Markenherstellern",
+      "dispatchDescription": "Schnelle Bearbeitung & pünktliche Lieferung",
+      "secureDescription": "Sichere & verschlüsselte Zahlungen",
+      "supportDescription": "Persönliche Hilfe, wann immer du sie brauchst"
+    },
+    "categories": {
+      "eyebrow": "Nach Kategorie",
+      "title": "Jedes Upgrade,",
+      "highlight": "jedes Auto.",
+      "description": "Von Autoradios und Navigation bis Multimedia und Zubehör — entdecke das ganze Sortiment.",
+      "viewAll": "Alle ansehen"
+    },
+    "brands": {
+      "eyebrow": "Nach Fahrzeug",
+      "title": "Beliebte",
+      "highlight": "Fahrzeugmarken",
+      "description": "Wähle deine Marke, um passende Produkte zu sehen.",
+      "viewAll": "Alle ansehen",
+      "productCount": "{count, plural, one {# Produkt} other {# Produkte}}",
+      "comingSoon": "Demnächst verfügbar"
+    },
+    "why": {
+      "eyebrow": "Warum {siteName}",
+      "title": "Der smarte Weg, dein",
+      "highlight": "Auto aufzurüsten.",
+      "description": "Vier Versprechen, die jede Bestellung begleiten."
     }
   }
 }

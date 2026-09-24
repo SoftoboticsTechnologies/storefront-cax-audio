@@ -2,7 +2,7 @@ import type {Metadata, Viewport} from "next";
 import Script from "next/script";
 import {locale as rootLocale} from "next/root-params";
 import {hasLocale, NextIntlClientProvider} from "next-intl";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Barlow, Bebas_Neue, Geist_Mono} from "next/font/google";
 import {getMessages, getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 import {routing} from "@/platform/i18n/routing";
@@ -12,13 +12,22 @@ import {Toaster} from "@/components/ui/sonner";
 import {Navbar} from '@/site/navigation/navbar';
 import {Footer} from "@/site/footer";
 import {AnnouncementBar} from "@/site/announcement-bar";
+import {WhatsAppButton} from "@/site/whatsapp-button";
+import {BusinessJsonLd} from "@/site/business-json-ld";
 import {ThemeProvider} from "@/site/providers/theme-provider";
 import {AuthProvider} from "@/features/authentication/auth-context";
 import {SITE_NAME, SITE_URL} from "@/config/metadata";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const barlow = Barlow({
+    variable: "--font-barlow",
     subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+});
+
+const bebasNeue = Bebas_Neue({
+    variable: "--font-bebas-neue",
+    subsets: ["latin"],
+    weight: "400",
 });
 
 const geistMono = Geist_Mono({
@@ -50,6 +59,13 @@ export async function generateMetadata(): Promise<Metadata> {
         twitter: {
             card: "summary_large_image",
         },
+        // /favicon.ico itself comes from the src/app/favicon.ico file convention.
+        // favicon.svg is deliberately not linked: it's a ~1.4MB embedded raster.
+        icons: {
+            icon: [{url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png"}],
+            apple: "/favicon/apple-touch-icon.png",
+        },
+        manifest: "/favicon/site.webmanifest",
         robots: {
             index: true,
             follow: true,
@@ -75,7 +91,7 @@ export const viewport: Viewport = {
     maximumScale: 5,
     themeColor: [
         {media: "(prefers-color-scheme: light)", color: "#ffffff"},
-        {media: "(prefers-color-scheme: dark)", color: "#000000"},
+        {media: "(prefers-color-scheme: dark)", color: "#0b1220"},
     ],
 };
 
@@ -92,8 +108,9 @@ export default async function LocaleLayout({children}: {children: React.ReactNod
     return (
         <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+                className={`${barlow.variable} ${bebasNeue.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
             >
+                <BusinessJsonLd/>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <ThemeProvider>
                         <AuthProvider>
@@ -101,6 +118,7 @@ export default async function LocaleLayout({children}: {children: React.ReactNod
                             <Navbar />
                             {children}
                             <Footer/>
+                            <WhatsAppButton/>
                             <Toaster/>
                         </AuthProvider>
                     </ThemeProvider>

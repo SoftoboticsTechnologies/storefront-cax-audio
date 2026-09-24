@@ -1,0 +1,27 @@
+Fallback category images (used only when a Vendure collection has no featured asset).
+Source: Wikimedia Commons. Resized and cropped to a square.
+
+bmw-1-series.jpg
+  BMW 1 SERIES (F20) China (12).jpg
+  by Dinkun Chen, CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0
+  https://commons.wikimedia.org/wiki/File:BMW_1_SERIES_(F20)_China_(12).jpg
+
+mercedes-a-class.jpg
+  Driving the new Mercedes A-Class 2012 (7661454164).jpg
+  by John Karakatsanis from Athens, Greece, CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0
+  https://commons.wikimedia.org/wiki/File:Driving_the_new_Mercedes_A-Class_2012_(7661454164).jpg
+
+car-electronics.jpg
+  Alpine SBE-12BR and V-Power MRP-M350.jpg
+  by Santeri Viinamäki, CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0
+  https://commons.wikimedia.org/wiki/File:Alpine_SBE-12BR_and_V-Power_MRP-M350.jpg
+
+in-dash-head-unit.jpg
+  Toyota Camry Gen6 aftermarket Blaupunkt Hamburg MP57 installed cropped.jpg
+  by Zuzu, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0
+  https://commons.wikimedia.org/wiki/File:Toyota_Camry_Gen6_aftermarket_Blaupunkt_Hamburg_MP57_installed_cropped.jpg
+
+parts-accessories.jpg
+  Harman Kardon Car Audio Speaker (cropped).jpg
+  by Cozinsky, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0
+  https://commons.wikimedia.org/wiki/File:Harman_Kardon_Car_Audio_Speaker_(cropped).jpg

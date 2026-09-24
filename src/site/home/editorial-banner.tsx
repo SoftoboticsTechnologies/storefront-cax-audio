@@ -20,39 +20,40 @@ export async function EditorialBanner({collectionSlug}: EditorialBannerProps) {
     }
 
     return (
-        <section className="py-12 md:py-16">
+        <section className="pt-12 md:pt-16 pb-0">
             <div className="container mx-auto px-4">
                 <Link
                     href={`/collection/${collection.slug}`}
                     // See product-card.tsx: default prefetch hits a Next.js 16
                     // static-export bug (vercel/next.js#85374).
                     prefetch={false}
-                    className="group relative block overflow-hidden rounded-2xl bg-muted min-h-[20rem] md:min-h-[26rem]"
+                    className="group relative grid overflow-hidden rounded-2xl bg-navy text-navy-foreground md:grid-cols-2 min-h-[18rem] md:min-h-[22rem]"
                 >
-                    {collection.featuredAsset?.preview && (
-                        <Image
-                            src={collection.featuredAsset.preview}
-                            alt=""
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            sizes="100vw"
-                        />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="relative h-full flex flex-col justify-end p-8 md:p-12 max-w-xl">
-                        <span className="text-xs font-semibold tracking-widest uppercase text-white/80 mb-3">
-                            {t('editorialBanner.eyebrow')}
-                        </span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+                    <div className="relative z-10 flex flex-col justify-center p-8 md:p-12">
+                        <span className="eyebrow mb-3">{t('editorialBanner.eyebrow')}</span>
+                        <h2 className="font-display text-4xl md:text-6xl mb-4">
                             {collection.name}
                         </h2>
-                        <p className="text-white/85 leading-relaxed mb-6 line-clamp-2">
+                        <p className="text-navy-foreground/75 leading-relaxed mb-7 max-w-md line-clamp-3">
                             {collection.description?.trim() || t('editorialBanner.fallbackDescription')}
                         </p>
-                        <span className="inline-flex items-center gap-1.5 text-white font-medium">
+                        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground">
                             {t('editorialBanner.cta')}
                             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                         </span>
+                    </div>
+                    {/* Below md the photo fills the whole card behind the text; md+ it is the right half. */}
+                    <div className="absolute inset-0 md:relative md:inset-auto">
+                        {collection.featuredAsset?.preview && (
+                            <Image
+                                src={collection.featuredAsset.preview}
+                                alt=""
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        )}
+                        <div className="absolute inset-0 bg-navy/75 md:bg-transparent md:bg-gradient-to-r md:from-navy md:via-navy/30 md:to-transparent" />
                     </div>
                 </Link>
             </div>

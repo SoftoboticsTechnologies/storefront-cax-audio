@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function SearchPage() {
     return (
-        <div className="container mx-auto px-4 py-8 mt-16">
+        <div className="container mx-auto px-4 py-8">
             <Suspense fallback={<SearchTermSkeleton/>}>
                 <SearchTerm/>
             </Suspense>

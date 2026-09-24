@@ -63,7 +63,7 @@ export function MobileNav({collections}: MobileNavProps) {
                     <button
                         type="button"
                         onClick={handleSearchTrigger}
-                        className="relative flex items-center rounded-md border border-input bg-transparent px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-accent"
+                        className="relative flex items-center rounded-full border border-border bg-muted px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:border-primary/50"
                     >
                         <Search className="mr-2 h-4 w-4 shrink-0" />
                         <span className="truncate">{t('searchProducts')}</span>

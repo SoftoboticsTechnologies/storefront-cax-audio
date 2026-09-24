@@ -1,17 +1,61 @@
 {
   "Hero": {
-    "eyebrow": "New Collection",
-    "titlePrefix": "Discover",
-    "titleFallback": "Discover Quality Products",
-    "subtitle": "Thoughtfully curated products, presented with the care they deserve.",
-    "shopNow": "Shop Now",
-    "viewAllProducts": "View All Products"
+    "eyebrow": "Car audio & multimedia",
+    "titleStart": "Find the right",
+    "titleHighlight": "upgrade",
+    "titleEnd": "for your ride.",
+    "subtitle": "Android head units, GPS navigation and in-car multimedia — find the exact fit for your vehicle.",
+    "finder": {
+      "vehicleTitle": "Search by vehicle",
+      "anyBrand": "Any vehicle brand",
+      "categoryLabel": "Category",
+      "allCategories": "All categories",
+      "findProducts": "Find products",
+      "or": "or",
+      "keywordTitle": "Search by keyword",
+      "keywordPlaceholder": "e.g. Android head unit",
+      "search": "Search"
+    },
+    "slides": {
+      "brand": {
+        "eyebrow": "Cax Audio · Drive the sound",
+        "title": "Smart audio. Bigger journeys.",
+        "description": "Android head units, GPS navigation and in-car multimedia systems.",
+        "cta": "Shop now"
+      },
+      "bmw": {
+        "eyebrow": "For BMW cars",
+        "title": "Upgrade your BMW",
+        "description": "Android head units, GPS navigation and in-car multimedia made to fit your BMW.",
+        "cta": "Shop BMW"
+      },
+      "mercedes": {
+        "eyebrow": "For Mercedes-Benz cars",
+        "title": "Upgrade your Mercedes-Benz",
+        "description": "Android screens and multimedia upgrades built for your Mercedes-Benz dashboard.",
+        "cta": "Shop Mercedes-Benz"
+      },
+      "audi": {
+        "eyebrow": "For Audi cars",
+        "title": "Upgrade your Audi",
+        "description": "Android head units, GPS navigation and multimedia upgrades made to fit your Audi.",
+        "cta": "Shop Audi"
+      },
+      "porsche": {
+        "eyebrow": "For Porsche cars",
+        "title": "Upgrade your Porsche",
+        "description": "Android head units, GPS navigation and multimedia upgrades made to fit your Porsche.",
+        "cta": "Shop Porsche"
+      }
+    },
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "goToSlide": "Go to slide {number}"
   },
   "Home": {
     "pageTitle": "Your One-Stop Shop",
     "description": "Discover high-quality products at competitive prices. Shop now for the best deals on electronics, fashion, home goods, and more.",
     "ogDescription": "Discover high-quality products at competitive prices. Shop now for the best deals.",
-    "whyShopWithUs": "Why Shop With Us",
     "features": {
       "highQuality": {
         "title": "High Quality",
@@ -24,23 +68,53 @@
       "fastDelivery": {
         "title": "Fast Delivery",
         "description": "Quick and reliable shipping worldwide"
+      },
+      "securePayments": {
+        "title": "Secure Payments",
+        "description": "Encrypted checkout with trusted payment providers"
       }
-    },
-    "categoryDiscovery": {
-      "title": "Shop by Category"
     },
     "editorialBanner": {
       "eyebrow": "Editor's Pick",
       "cta": "Explore the collection",
       "fallbackDescription": "A curated edit of our favorite pieces, chosen for their quality and design."
     },
-    "shopByCategory": {
-      "title": "Browse Our Collections"
-    },
     "ctaBanner": {
       "title": "Join the Community",
       "subtitle": "Create an account for a faster checkout, order tracking, and early access to new arrivals.",
       "cta": "Create Account"
+    },
+    "trust": {
+      "genuine": "Genuine products",
+      "dispatch": "Fast dispatch",
+      "secure": "Secure payments",
+      "support": "Expert support",
+      "genuineDescription": "100% authentic & original branded products",
+      "dispatchDescription": "Quick processing & on-time delivery",
+      "secureDescription": "Safe & encrypted transactions",
+      "supportDescription": "Dedicated help whenever you need"
+    },
+    "categories": {
+      "eyebrow": "Shop by category",
+      "title": "Every upgrade,",
+      "highlight": "every car.",
+      "description": "From head units and navigation to multimedia and accessories — browse the whole range.",
+      "viewAll": "View all"
+    },
+    "brands": {
+      "eyebrow": "Shop by vehicle",
+      "title": "Popular",
+      "highlight": "vehicle brands",
+      "description": "Pick your make to see products built for it.",
+      "viewAll": "View all",
+      "productCount": "{count, plural, one {# product} other {# products}}",
+      "comingSoon": "Coming soon"
+    },
+    "why": {
+      "eyebrow": "Why {siteName}",
+      "title": "The smarter way to",
+      "highlight": "upgrade your car.",
+      "description": "Four promises we ship with every order."
     }
   }
 }

@@ -6,6 +6,7 @@ import {SearchProductsQuery} from '@/features/search/graphql';
 import {buildSearchInput} from '@/features/search/search-helpers';
 import {getActiveCurrencyCode} from '@/features/currency/currency-server';
 import {CollectionResults} from '@/features/collections/routes/collection-results';
+import {CollectionHero} from '@/features/collections/routes/collection-hero';
 import {
     Breadcrumb,
     BreadcrumbList,
@@ -124,11 +125,12 @@ export default async function CollectionPage({params}: PageProps<'/[locale]/coll
     // filters, sort, and pagination are resolved live client-side (currency-
     // and query-string-dependent) — see collection-results.tsx.
     const collectionResult = await getCollectionMetadata(slug);
-    const collectionName = collectionResult.data.collection?.name ?? slug;
+    const collection = collectionResult.data.collection;
+    const collectionName = collection?.name ?? slug;
     const initialProducts = await getDefaultCollectionProducts(slug);
 
     return (
-        <div className="container mx-auto px-4 py-8 mt-16">
+        <div className="container mx-auto px-4 py-8">
             {/* Breadcrumbs */}
             <Breadcrumb className="mb-6">
                 <BreadcrumbList>
@@ -142,12 +144,17 @@ export default async function CollectionPage({params}: PageProps<'/[locale]/coll
                 </BreadcrumbList>
             </Breadcrumb>
 
-            {/* Collection Header */}
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight">{collectionName}</h1>
-            </div>
+            <CollectionHero
+                name={collectionName}
+                slug={slug}
+                description={collection?.description}
+                image={collection?.featuredAsset?.preview}
+                productsAnchor="products"
+            />
 
-            <CollectionResults collectionSlug={slug} initialProducts={initialProducts.data} />
+            <div id="products" className="scroll-mt-20">
+                <CollectionResults collectionSlug={slug} initialProducts={initialProducts.data} />
+            </div>
         </div>
     );
 }

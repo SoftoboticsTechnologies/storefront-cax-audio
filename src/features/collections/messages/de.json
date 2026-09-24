@@ -2,6 +2,9 @@
   "Collection": {
     "home": "Startseite",
     "collectionNotFound": "Kategorie nicht gefunden",
-    "browseCollectionAt": "Entdecken Sie unsere {name}-Kollektion bei {siteName}"
+    "browseCollectionAt": "Entdecken Sie unsere {name}-Kollektion bei {siteName}",
+    "heroEyebrow": "Kollektion",
+    "heroFallbackDescription": "Entdecke unser {name}-Sortiment: Android-Autoradios, GPS-Navigation und Multimedia-Upgrades.",
+    "heroCta": "Produkte ansehen"
   }
 }

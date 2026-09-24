@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import {getRouteLocale} from '@/platform/i18n/server';
-import {getTopCollections} from '@/features/collections/data';
+import {getRootCollections} from '@/features/collections/data';
 import {NavigationLink} from '@/site/navigation/navigation-link';
 import {
     NavigationMenu,
@@ -12,10 +12,12 @@ import {
 } from '@/components/ui/navigation-menu';
 import {NavbarLink} from '@/site/navigation/navbar/navbar-link';
 
+const navItemClassName = 'h-10 px-3 text-[13px] font-semibold uppercase tracking-wide hover:text-primary';
+
 export async function NavbarCollections() {
     const locale = await getRouteLocale();
 
-    const collections = await getTopCollections(locale);
+    const collections = await getRootCollections(locale);
 
     return (
         <NavigationMenu>
@@ -25,7 +27,7 @@ export async function NavbarCollections() {
                     if (children.length === 0) {
                         return (
                             <NavigationMenuItem key={collection.slug}>
-                                <NavbarLink href={`/collection/${collection.slug}`} prefetch={false}>
+                                <NavbarLink href={`/collection/${collection.slug}`} prefetch={false} className={navItemClassName}>
                                     {collection.name}
                                 </NavbarLink>
                             </NavigationMenuItem>
@@ -34,7 +36,7 @@ export async function NavbarCollections() {
 
                     return (
                         <NavigationMenuItem key={collection.slug}>
-                            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
+                            <NavigationMenuTrigger className={`${navItemClassName} bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent data-popup-open:text-primary`}>
                                 {collection.name}
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>

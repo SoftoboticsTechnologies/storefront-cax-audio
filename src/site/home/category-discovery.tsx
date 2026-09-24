@@ -1,13 +1,18 @@
 import Image from "next/image";
+import {ArrowRight} from "lucide-react";
 import { Link } from '@/platform/i18n/navigation';
 import {getTranslations} from 'next-intl/server';
 import {getRouteLocale} from '@/platform/i18n/server';
 import {getTopCollections} from '@/features/collections/data';
+import {SectionHeading, sectionActionClassName} from '@/components/ui/section-heading';
+import {getCategoryFallbackImage} from '@/features/collections/fallback-images';
+
+const MAX_TILES = 12;
 
 export async function CategoryDiscovery() {
     const locale = await getRouteLocale();
-    const t = await getTranslations({locale, namespace: 'Home'});
-    const collections = await getTopCollections(locale);
+    const t = await getTranslations({locale, namespace: 'Home.categories'});
+    const collections = (await getTopCollections(locale)).slice(0, MAX_TILES);
 
     if (collections.length === 0) {
         return null;
@@ -16,36 +21,57 @@ export async function CategoryDiscovery() {
     return (
         <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">
-                    {t('categoryDiscovery.title')}
-                </h2>
-                <div className="flex gap-6 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6">
-                    {collections.map((collection) => (
-                        <Link
-                            key={collection.slug}
-                            href={`/collection/${collection.slug}`}
-                            // See product-card.tsx: default prefetch hits a Next.js 16
-                            // static-export bug (vercel/next.js#85374).
-                            prefetch={false}
-                            className="group flex flex-col items-center gap-3 shrink-0 w-24 md:w-auto"
-                        >
-                            <div className="relative size-24 rounded-full overflow-hidden bg-muted border border-border transition-shadow group-hover:shadow-lg">
-                                {collection.featuredAsset?.preview ? (
-                                    <Image
-                                        src={`${collection.featuredAsset.preview}?preset=thumb`}
-                                        alt=""
-                                        fill
-                                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                        sizes="96px"
-                                    />
-                                ) : null}
-                            </div>
-                            <span className="text-sm font-medium text-center line-clamp-1 group-hover:text-primary transition-colors">
-                                {collection.name}
-                            </span>
+                <SectionHeading
+                    eyebrow={t('eyebrow')}
+                    title={t('title')}
+                    highlight={t('highlight')}
+                    description={t('description')}
+                    action={
+                        <Link href="/search" className={sectionActionClassName}>
+                            {t('viewAll')}
+                            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                         </Link>
-                    ))}
-                </div>
+                    }
+                />
+                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-5">
+                    {collections.map((collection) => {
+                        // Vendure's featured asset wins; the fallback only fills empty tiles.
+                        const image = collection.featuredAsset?.preview
+                            ? `${collection.featuredAsset.preview}?preset=medium`
+                            : getCategoryFallbackImage(collection.slug);
+
+                        return (
+                            <li key={collection.id}>
+                                <Link
+                                    href={`/collection/${collection.slug}`}
+                                    // See product-card.tsx: default prefetch hits a Next.js 16
+                                    // static-export bug (vercel/next.js#85374).
+                                    prefetch={false}
+                                    className="group flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-lg"
+                                >
+                                    <div className="relative aspect-square bg-muted overflow-hidden">
+                                        {image ? (
+                                            <Image
+                                                src={image}
+                                                alt=""
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 16vw"
+                                            />
+                                        ) : (
+                                            <span aria-hidden className="absolute inset-0 flex items-center justify-center font-display text-6xl text-muted-foreground/25 transition-colors group-hover:text-primary/40">
+                                                {collection.name.trim().charAt(0)}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <span className="flex flex-1 items-center justify-center border-t px-2 py-3 text-center text-xs font-bold uppercase tracking-wide line-clamp-2 transition-colors group-hover:text-primary">
+                                        {collection.name}
+                                    </span>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         </section>
     );

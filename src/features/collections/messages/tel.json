@@ -2,6 +2,9 @@
   "Collection": {
     "home": "హోమ్",
     "collectionNotFound": "సేకరణ కనుగొనబడలేదు",
-    "browseCollectionAt": "{siteName} వద్ద మా {name} సేకరణను బ్రౌజ్ చేయండి"
+    "browseCollectionAt": "{siteName} వద్ద మా {name} సేకరణను బ్రౌజ్ చేయండి",
+    "heroEyebrow": "కలెక్షన్",
+    "heroFallbackDescription": "మా {name} శ్రేణిని చూడండి: ఆండ్రాయిడ్ హెడ్ యూనిట్లు, GPS నావిగేషన్ మరియు ఇన్-కార్ మల్టీమీడియా అప్‌గ్రేడ్‌లు.",
+    "heroCta": "ఉత్పత్తులు చూడండి"
   }
 }

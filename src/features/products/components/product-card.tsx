@@ -4,6 +4,7 @@ import {ProductCardFragment} from '@/features/products/graphql';
 import {ProductCardPrice} from '@/features/products/product-price-client';
 import { Link } from '@/platform/i18n/navigation';
 import {useTranslations} from 'next-intl';
+import {ArrowRight} from 'lucide-react';
 
 interface ProductCardProps {
     product: FragmentOf<typeof ProductCardFragment>;
@@ -31,7 +32,7 @@ export function ProductCard({product: productProp, preload}: ProductCardProps) {
             // App Router falls back to a full navigation), but disabling
             // prefetch here avoids it outright. Revisit once Next ships a fix.
             prefetch={false}
-            className="group block bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="group flex h-full flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
         >
             <div className="aspect-square relative bg-muted overflow-hidden">
                 {product.productAsset ? (
@@ -40,7 +41,7 @@ export function ProductCard({product: productProp, preload}: ProductCardProps) {
                         alt={product.productName}
                         fill
                         preload={preload}
-                        className="object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
+                        className="object-contain p-4 mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     />
                 ) : (
@@ -49,13 +50,18 @@ export function ProductCard({product: productProp, preload}: ProductCardProps) {
                     </div>
                 )}
             </div>
-            <div className="p-4 space-y-2">
-                <h3 className="font-medium leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+            <div className="flex flex-1 flex-col gap-3 border-t p-4">
+                <h3 className="text-sm md:text-[15px] font-semibold leading-snug line-clamp-2 group-hover:text-primary transition-colors">
                     {product.productName}
                 </h3>
-                <p className="text-lg font-bold tracking-tight">
-                    <ProductCardPrice slug={product.slug} initial={initialPrice} />
-                </p>
+                <div className="mt-auto flex items-end justify-between gap-2">
+                    <p className="text-lg font-bold tracking-tight">
+                        <ProductCardPrice slug={product.slug} initial={initialPrice} />
+                    </p>
+                    <span aria-hidden className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                        <ArrowRight className="size-4" />
+                    </span>
+                </div>
             </div>
         </Link>
     );
